@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>FocusLearn – Learn Smart, Not Hard</title>
+<link rel="stylesheet" href="home.css">
+</head>
+<body>
+
+<!-- PAGE 1: LOGIN -->
+<main id="login" class="login">
+  <form id="loginForm" class="card login-card" novalidate>
+    <div class="logo-big" aria-hidden="true">🎓</div>
+    <h1>FocusLearn</h1>
+    <p class="muted">Learn Smart, Not Hard</p>
+
+    <label for="email">Email or Student ID</label>
+    <input id="email" type="text" autocomplete="username" placeholder="lucas@student.com">
+
+    <label for="pw">Password</label>
+    <div class="pw-wrap">
+      <input id="pw" type="password" autocomplete="current-password" placeholder="Password">
+      <button type="button" id="showPw" class="ghost">Show</button>
+    </div>
+
+    <p id="loginMsg" class="msg" role="alert"></p>
+    <button type="submit" class="btn primary block">Sign In</button>
+
+    <p class="links">
+      <a href="#" id="forgot">Forgot Password?</a>
+      <a href="#" id="create">Create Account</a>
+    </p>
+    <p class="hint">Demo: lucas@student.com / lucas123</p>
+  </form>
+</main>
+
+<!-- APP (shown after login) -->
+<div id="app" class="app" hidden>
+  <header class="mbar">
+    <button id="menuBtn" class="btn ghost" aria-expanded="false" aria-controls="side">☰ Menu</button>
+    <strong>🎓 FocusLearn</strong>
+  </header>
+
+  <aside id="side" class="side">
+    <div class="brand">🎓 FocusLearn</div>
+    <nav id="nav" aria-label="Main">
+      <button data-act="nav" data-v="home">Home</button>
+      <button data-act="nav" data-v="assignments">Assignments</button>
+      <button data-act="nav" data-v="calendar">Calendar</button>
+      <button data-act="nav" data-v="progress">Progress</button>
+      <button data-act="nav" data-v="settings">Settings</button>
+    </nav>
+    <div class="user">
+      <div class="avatar" aria-hidden="true">L</div>
+      <div><strong>Lucas</strong><br><span class="small">Grade 10</span></div>
+      <button data-act="logout" class="signout">Sign out</button>
+    </div>
+  </aside>
+
+  <section class="content">
+    <div class="tools">
+      <button class="btn ghost" data-act="nav" data-v="notifications" id="bell">Notifications</button>
+      <button class="btn ghost" data-act="zen" id="zenBtn">Hide menu</button>
+    </div>
+    <div id="main" tabindex="-1"></div>
+  </section>
+  <button id="zenExit" class="btn primary zen-exit" data-act="zen" hidden>Show menu</button>
+</div>
+
+<div id="toast" role="status" aria-live="polite"></div>
+<script src="home.js"></script>
+</body>
+</html>
